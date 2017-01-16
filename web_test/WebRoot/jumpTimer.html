@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div style="border:1px red solid; margin:20px auto; padding: 10px auto; text-align: center;">
+		还剩<span style="color:red;" id="promt">5</span>秒跳转
+	</div>
+</body>
+
+<script type="text/javascript">
+	
+	var t = 5;
+	var timer = setInterval(
+		function() {
+			var promt = document.getElementById("promt");
+			//alert(promt);
+			if(t<=0){
+				clearInterval(timer);
+				window.location.href="jsevent.html";
+				return;
+			}
+			promt.innerHTML=--t;
+		},
+		1000
+	);
+	
+</script>
+</html>

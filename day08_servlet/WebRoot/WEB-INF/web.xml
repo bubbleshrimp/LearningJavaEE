@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>day08_servlet</display-name>
+	
+	
+	<context-param>
+		<param-name>name1</param-name>
+		<param-value>value1</param-value>
+	</context-param>
+	<context-param>
+		<param-name>name2</param-name>
+		<param-value>value2</param-value>
+	</context-param>
+	
+	<!-- =================com.lee.servlet=================== -->
+	<servlet>
+		<servlet-name>ServletDemo1</servlet-name>
+		<servlet-class>com.lee.servlet.ServletDemo1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo2</servlet-name>
+		<servlet-class>com.lee.servlet.ServletDemo2</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo3</servlet-name>
+		<servlet-class>com.lee.servlet.ServletDemo3</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo4</servlet-name>
+		<servlet-class>com.lee.servlet.ServletDemo4</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServletDemo1</servlet-name>
+		<url-pattern>/servlet/demo1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo2</servlet-name>
+		<url-pattern>/servlet/demo2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo3</servlet-name>
+		<url-pattern>/servlet/demo3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo4</servlet-name>
+		<url-pattern>/servlet/demo4</url-pattern>
+	</servlet-mapping>
+
+	<!-- =================com.lee.servlet_config=================== -->
+
+	<servlet>
+		<servlet-name>ServletConfigDemo1</servlet-name>
+		<servlet-class>com.lee.servletConfig.ServletConfigDemo1</servlet-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>key</param-name>
+			<param-value>value</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletConfigDemo1</servlet-name>
+		<url-pattern>/servlet/configdemo1</url-pattern>
+	</servlet-mapping>
+
+
+
+	<!-- =================com.lee.servlet=================== -->
+	<servlet>
+		<servlet-name>ServletContextDemo1</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletContextDemo2</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo2</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletContextDemo3</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo3</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletContextDemo4</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo4</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>ServletContextDemo5</servlet-name>
+    <servlet-class>com.lee.servletContext.ServletContextDemo5</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletContextDemo6</servlet-name>
+    <servlet-class>com.lee.servletContext.ServletContextDemo6</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ServletDemo5</servlet-name>
+    <servlet-class>com.lee.servlet.ServletDemo5</servlet-class>
+  </servlet>
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo1</servlet-name>
+		<url-pattern>/servlet/contextDemo1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo2</servlet-name>
+		<url-pattern>/servlet/contextDemo2</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo3</servlet-name>
+		<url-pattern>/servlet/contextDemo3</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo4</servlet-name>
+		<url-pattern>/servlet/contextDemo4</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo5</servlet-name>
+    <url-pattern>/servlet/contextDemo5</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextDemo6</servlet-name>
+    <url-pattern>/servlet/contextDemo6</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletDemo5</servlet-name>
+    <url-pattern>/servlet/demo5</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
