@@ -119,7 +119,7 @@ public class Demo1 {
 		Statement stmt = null;
 		ResultSet rs = null;
 		
-		ResourceBundle rb = ResourceBundle.getBundle("dbinfo");
+		ResourceBundle rb = ResourceBundle.getBundle("mysql");
 		driverClass = rb.getString("driverClass");
 		url = rb.getString("url");
 		user = rb.getString("user");
