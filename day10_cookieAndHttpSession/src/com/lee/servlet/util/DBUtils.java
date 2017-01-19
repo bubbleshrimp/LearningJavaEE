@@ -1,4 +1,4 @@
-package com.lee.servlet.dbUtil;
+package com.lee.servlet.util;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ public class DBUtils {
 		books.put(5, new Book(5, "JavaEE实战开发", "作者1", 99.0, "javaEE.jpg"));
 		books.put(6, new Book(6, "深入理解Java虚拟机", "作者1", 69.0, "javaVM.jpg"));
 		books.put(7, new Book(7, "Think in Java", "作者5", 67.0, "think_in_java.jpg"));
-		books.put(8, new Book(8, "金瓶梅", "兰陵笑笑生", 67.0, "金瓶梅.jpg"));
+		books.put(8, new Book(8, "金瓶梅", "兰陵笑笑生", 67.0, "jpm.jpg"));
 	}
 	
 	public static Book getBookById(int id){
