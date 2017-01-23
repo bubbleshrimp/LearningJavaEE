@@ -4,8 +4,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	id="WebApp_ID" version="3.0">
 	<display-name>day08_servlet</display-name>
-	
-	
+
+
 	<context-param>
 		<param-name>name1</param-name>
 		<param-value>value1</param-value>
@@ -14,7 +14,7 @@
 		<param-name>name2</param-name>
 		<param-value>value2</param-value>
 	</context-param>
-	
+
 	<!-- =================com.lee.servlet=================== -->
 	<servlet>
 		<servlet-name>ServletDemo1</servlet-name>
@@ -88,18 +88,32 @@
 		<servlet-name>ServletContextDemo4</servlet-name>
 		<servlet-class>com.lee.servletContext.ServletContextDemo4</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ServletContextDemo5</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo5</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletContextDemo6</servlet-name>
+		<servlet-class>com.lee.servletContext.ServletContextDemo6</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ServletDemo5</servlet-name>
+		<servlet-class>com.lee.servlet.ServletDemo5</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>RequestDispatcherDemo1</servlet-name>
+		<servlet-class>com.lee.servletContext.RequestDispatcherDemo1</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>RequestDispatcherDemo2</servlet-name>
+		<servlet-class>com.lee.servletContext.RequestDispatcherDemo2</servlet-class>
+	</servlet>
   <servlet>
-    <servlet-name>ServletContextDemo5</servlet-name>
-    <servlet-class>com.lee.servletContext.ServletContextDemo5</servlet-class>
+    <servlet-name>RequsetDispatcherDemo3</servlet-name>
+    <servlet-class>com.lee.servletContext.RequsetDispatcherDemo3</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>ServletContextDemo6</servlet-name>
-    <servlet-class>com.lee.servletContext.ServletContextDemo6</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ServletDemo5</servlet-name>
-    <servlet-class>com.lee.servlet.ServletDemo5</servlet-class>
-  </servlet>
+
 
 
 
@@ -120,20 +134,31 @@
 		<servlet-name>ServletContextDemo4</servlet-name>
 		<url-pattern>/servlet/contextDemo4</url-pattern>
 	</servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ServletContextDemo5</servlet-name>
-    <url-pattern>/servlet/contextDemo5</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ServletContextDemo6</servlet-name>
-    <url-pattern>/servlet/contextDemo6</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ServletDemo5</servlet-name>
-    <url-pattern>/servlet/demo5</url-pattern>
-  </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo5</servlet-name>
+		<url-pattern>/servlet/contextDemo5</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletContextDemo6</servlet-name>
+		<url-pattern>/servlet/contextDemo6</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletDemo5</servlet-name>
+		<url-pattern>/servlet/demo5</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RequestDispatcherDemo1</servlet-name>
+		<url-pattern>/servlet/dispatcherDemo1</url-pattern>
+	</servlet-mapping>
 
-
+	<servlet-mapping>
+		<servlet-name>RequestDispatcherDemo2</servlet-name>
+		<url-pattern>/servlet/dispatcherDemo2</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequsetDispatcherDemo3</servlet-name>
+    <url-pattern>/servlet/dispatcherDemo3</url-pattern>
+  </servlet-mapping>
 
 
 
