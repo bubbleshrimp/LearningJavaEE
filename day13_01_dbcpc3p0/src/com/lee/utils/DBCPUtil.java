@@ -11,14 +11,18 @@ import javax.sql.DataSource;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
 
 
-
+/**
+ * dbcp数据库连接工具
+ * @author 60238
+ *
+ */
 public class DBCPUtil {
 	private static DataSource ds = null;
 
-	public static void init(){
+	static{
 		Properties prop = new Properties();
 		try {
-			prop.load(DBCPUtil.class.getClassLoader().getResourceAsStream("dbcpconfig.properties"));
+			prop.load(DBCPUtil.class.getClassLoader().getResourceAsStream("dbcpconfig.properties"));	//加载dbcp配置文件
 			ds = BasicDataSourceFactory.createDataSource(prop);
 		} catch (Exception e) {
 			throw new ExceptionInInitializerError("初始化错误...");

@@ -8,7 +8,11 @@ import java.util.List;
 import com.lee.dbutils.DBUtils;
 
 
-//简单数据库连接池原理，不能实际使用
+/**
+ * 简单数据库连接池原理，不能实际生产使用
+ * @author 60238
+ *
+ */
 public class SimpleConnPool {
 	private static List<Connection> pool = (List<Connection>) Collections.synchronizedCollection( new ArrayList<Connection>());
 	

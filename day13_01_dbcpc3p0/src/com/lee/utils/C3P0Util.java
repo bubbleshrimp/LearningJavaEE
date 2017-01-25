@@ -7,7 +7,11 @@ import java.sql.Statement;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-
+/**
+ * C3P0数据库连接池工具类
+ * @author 60238
+ *
+ */
 public class C3P0Util {
 	private static ComboPooledDataSource dataSource = new ComboPooledDataSource();
 	

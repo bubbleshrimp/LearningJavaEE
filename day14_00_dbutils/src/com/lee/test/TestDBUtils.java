@@ -29,7 +29,8 @@ import com.lee.bean.User;
 import com.lee.utils.C3P0Util;
 
 public class TestDBUtils {
-	@Test
+
+	@Test		//直接实现ResultSetHandler接口，自定义handle()内对ResultSet的处理方式
 	public void test1() {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 		try {
@@ -64,7 +65,7 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//ArrayHandler:将结果集的第一行各列值以Object[]方式返回
 	public void test2() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -75,7 +76,7 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//ArrayListHandler：将结果集各列以List<Object[]>方式返回，每个Object[]对应一行值
 	public void test3() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -86,18 +87,18 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//ColumnListHandler(columnIndex)： columnIndex从1开始。返回结果集中指定列的所有值。
 	public void test4() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
 		List<Object> objs = qr.query("select * from users where id>?",
-				new ColumnListHandler<Object>(2), 3);
+				new ColumnListHandler<Object>(2), 1);
 		for (Object obj : objs) {
 			System.out.println(obj);
 		}
 	}
 
-	@Test
+	@Test	//BeanHandler(type.class):将结果集的第一行封装为指定的type对象返回。未成功映射的字段为null
 	public void test5() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -106,7 +107,7 @@ public class TestDBUtils {
 		System.out.println(u);
 	}
 
-	@Test
+	@Test	//BeanListHandler(type.class): 将结果集的每一行封装为对象，然后返回List。未成功映射的字段为null
 	public void test6() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -117,7 +118,7 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//BeanMapHandler:将结果集的每一行封装为对象做为map的value，每一行的第一列做为map的key，然后返回map。未成功映射的字段为null
 	public void test7() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -128,12 +129,12 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//KeyedHandler(columnName)：嵌套Map集合返回所有结果集对象。外层map的key为指定的列名的值，内层map的key为各列名，value为列值。
 	public void test8() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
 		Map<Long, Map<String, Object>> map = qr.query(
-				"select * from users where id>?", new KeyedHandler<Long>("id"),
+				"select * from users where id>?", new KeyedHandler<Long>("id"),	//注意：数据库的int值需映射为Long类型
 				1);
 		for (Map.Entry<Long, Map<String, Object>> mm : map.entrySet()) {
 			System.out.println(mm.getKey() + ": ");
@@ -144,18 +145,18 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//MapHandler: 以Map<列名， 列值>的方式返回结果集的第一行数据
 	public void test9() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
 		Map<String, Object> map = qr.query("select * from users where id>?",
-				new MapHandler(), 3);
+				new MapHandler(), 2);
 		for (Map.Entry<String, Object> m : map.entrySet()) {
 			System.out.println(m.getKey() + "\t" + m.getValue());
 		}
 	}
 
-	@Test
+	@Test	//MapListHandler:以List<Map<列名， 列值>>的方式返回结果集List
 	public void test10() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -171,7 +172,7 @@ public class TestDBUtils {
 		}
 	}
 
-	@Test
+	@Test	//ScalarHandler(columnIndex): columnIndex从1开始， 返回结果集的第一行第一列的值，多用于聚合函数
 	public void test11() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
@@ -188,7 +189,7 @@ public class TestDBUtils {
 		System.out.println(count);
 	}
 
-	@Test
+	@Test	//BaseResultSetHandler
 	public void test12() throws SQLException {
 		QueryRunner qr = new QueryRunner(C3P0Util.getDataSource());
 
