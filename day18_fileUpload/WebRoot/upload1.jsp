@@ -25,7 +25,7 @@
 </head>
 
 <body>
-	<form enctype="multipart/form-data"  method="post" action="${pageContext.request.contextPath }/servlet/uploadServlet">
+	<form enctype="multipart/form-data"  method="post" action="${pageContext.request.contextPath }/servlet/uploadServlet2">
 		用户名：<input type="text" name="userName" placeholder="userName" /><br>
 		文件一：<input type="file" name="file1" placeholder="file1" /><br>
 		文件二：<input type="file" name="file2" placeholder="file2" /><br> 

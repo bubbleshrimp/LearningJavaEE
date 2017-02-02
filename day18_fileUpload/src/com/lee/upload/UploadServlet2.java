@@ -33,11 +33,10 @@ public class UploadServlet2 extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Collection<Part> parts = request.getParts();
-		System.out.println(request.getParameter("name"));
-		System.out.println(parts);
+		System.out.println(request.getParameter("userName"));
+		System.out.println("=============================");
 		response.setContentType("text/html;charset=UTF-8");
 		for (Part part : parts) {
-			System.out.println(part.toString());
 			String contentType = part.getContentType();
 			String name = part.getName();
 			long size = part.getSize();
@@ -51,7 +50,6 @@ public class UploadServlet2 extends HttpServlet {
 			for (String hname : harderNames) {
 				System.out.println(hname +":  "+part.getHeader(hname));
 			}	
-			
 			System.out.println("=============================");
 			InputStream in = part.getInputStream();
 			byte[] cache = new byte[24];
