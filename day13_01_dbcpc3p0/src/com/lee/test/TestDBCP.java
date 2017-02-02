@@ -4,17 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.junit.Test;
+
 import com.lee.entity.User;
 import com.lee.utils.DBCPUtil;
 
 public class TestDBCP {
-	//@Test
-	public static void main(String[] args) throws Exception{
+	@Test
+	public void test1() throws Exception{
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		
-		DBCPUtil.init();
 		
 		try {
 			conn = DBCPUtil.getConnection();

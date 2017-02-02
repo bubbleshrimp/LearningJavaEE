@@ -7,6 +7,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+
+/**
+ * 基本的数据库连接工具类，无连接池功能
+ * @author 60238
+ *
+ */
 public class DBUtils {
 	public static Connection getConnection() throws Exception{
 		ResourceBundle rb = ResourceBundle.getBundle("dbinfo");
